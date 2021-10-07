@@ -72,10 +72,14 @@
   }
   .btnReplace {
     background-color: $btn-change-color;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 15px;
   }
   .textChange {
-    width: 200px;
-    height: 100px;
+    width: 280px;
+    height: 130px;
     display: block;
   }
 }

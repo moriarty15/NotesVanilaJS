@@ -11,7 +11,7 @@ const collectionNotes = document.querySelector('.js-menu');
 if (!localStorage.getItem('myNotes')) {
   const myObj = [
     {
-      text: 'Дефолтная заметка(образец)',
+      text: 'create your first note',
       id: uuidv4(),
     },
   ];
@@ -30,6 +30,7 @@ function notesTextContent(e) {
 
 let getStore;
 function renderList() {
+newNotes.value = ''
   const newNote = {
     text,
     id: uuidv4(),
@@ -43,6 +44,7 @@ function renderList() {
 
   collectionNotes.innerHTML = render({ getStore });
 }
+renderList();
 
 collectionNotes.addEventListener('click', deleteNote);
 
@@ -92,4 +94,4 @@ function deleteNote(el) {
   }
 }
 
-renderList();
+
