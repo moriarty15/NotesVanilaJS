@@ -2,7 +2,7 @@ import './sass/main.scss';
 import { debounce } from 'lodash';
 import render from './handlebars/listEl.hbs';
 import { v4 as uuidv4 } from 'uuid';
-import * as basicLightbox from 'basiclightbox'
+import * as basicLightbox from 'basiclightbox';
 
 const btnSave = document.querySelector('.btn__save');
 const newNotes = document.querySelector('.Notes__input');
@@ -61,22 +61,34 @@ function deleteNote(el) {
     const interim = JSON.parse(localStorage.getItem('myNotes'));
     const redact = interim.map(e => {
       if (e.id === el.path[2].id) {
-        basicLightbox.create(`
-    <div class="modal">
-        <input>
-        <button>перезаписать</button>
-    </div>
-`).show()
-        e.text = 'default text'
-        
+        const instance = basicLightbox
+          .create(`<div class="modal">
+          <input class="textChange" value=${e.text}>
+            <button class="btnReplace">перезаписать</button>
+          </div>`,
+          )
+        instance.show();
+        let curText;
+        const textChange = document.querySelector(".textChange")
+        textChange.addEventListener('keydown', debounce(currentText, 200))
+        function currentText(evn) {
+          curText = evn.target.value.trim()
+          
+        }
+        const btnReplace = document.querySelector(".btnReplace")
+        btnReplace.addEventListener('click', replaceText)
+        function replaceText() {          
+          e.text = curText          
+          localStorage.setItem('myNotes', JSON.stringify(redact));
+          getStore = JSON.parse(localStorage.getItem('myNotes'));
+          collectionNotes.innerHTML = render({ getStore });
+          instance.close();
+        }
       }
-      
-      return e
-    })
+      return e;
+    });
+    console.log(redact)
     
-    localStorage.setItem('myNotes', JSON.stringify(redact));
-    getStore = JSON.parse(localStorage.getItem('myNotes'));
-    collectionNotes.innerHTML = render({ getStore });
   }
 }
 
