@@ -63,17 +63,18 @@ function deleteNote(el) {
       if (e.id === el.path[2].id) {
         const instance = basicLightbox
           .create(`<div class="modal">
-          <input class="textChange" value=${e.text}>
+          <input class="textChange" size="text">
             <button class="btnReplace">перезаписать</button>
           </div>`,
           )
         instance.show();
         let curText;
         const textChange = document.querySelector(".textChange")
+        textChange.value = e.text;
         textChange.addEventListener('keydown', debounce(currentText, 200))
         function currentText(evn) {
+          if (evn.target.value.trim() === '') return
           curText = evn.target.value.trim()
-          
         }
         const btnReplace = document.querySelector(".btnReplace")
         btnReplace.addEventListener('click', replaceText)
@@ -86,9 +87,7 @@ function deleteNote(el) {
         }
       }
       return e;
-    });
-    console.log(redact)
-    
+    });    
   }
 }
 
