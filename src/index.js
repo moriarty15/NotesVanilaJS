@@ -2,6 +2,7 @@ import './sass/main.scss';
 import { debounce } from 'lodash';
 import render from './handlebars/listEl.hbs';
 import { v4 as uuidv4 } from 'uuid';
+import * as basicLightbox from 'basiclightbox'
 
 const btnSave = document.querySelector('.btn__save');
 const newNotes = document.querySelector('.Notes__input');
@@ -60,9 +61,16 @@ function deleteNote(el) {
     const interim = JSON.parse(localStorage.getItem('myNotes'));
     const redact = interim.map(e => {
       if (e.id === el.path[2].id) {
+        basicLightbox.create(`
+    <div class="modal">
+        <input>
+        <button>перезаписать</button>
+    </div>
+`).show()
         e.text = 'default text'
         
       }
+      
       return e
     })
     
