@@ -63,14 +63,15 @@ function deleteNote(el) {
       if (e.id === el.path[2].id) {
         const instance = basicLightbox
           .create(`<div class="modal">
-          <input class="textChange" size="text">
-            <button class="btnReplace">перезаписать</button>
+          <textarea class="textChange">
+          </textarea>
+            <button class="btnReplace btn">replace</button>
           </div>`,
           )
         instance.show();
         let curText;
         const textChange = document.querySelector(".textChange")
-        textChange.value = e.text;
+        textChange.textContent = e.text;
         textChange.addEventListener('keydown', debounce(currentText, 200))
         function currentText(evn) {
           if (evn.target.value.trim() === '') return
