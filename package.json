@@ -26,6 +26,8 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "lodash.debounce": "^4.0.8"
+    "basiclightbox": "^5.0.4",
+    "lodash.debounce": "^4.0.8",
+    "uuid": "^8.3.2"
   }
 }

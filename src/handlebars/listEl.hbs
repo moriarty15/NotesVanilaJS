@@ -1,9 +1,11 @@
 {{#each getStore}}
-<li>
-    <div>
+<li class="notes__item" id={{id}}>
+
         <p>{{text}}</p>
-        <button>delete</button>
-        <button>change</button>
+
+    <div>
+        <button class="btn delete">delete</button>
+        <button class="btn change">change</button>
     </div>
 </li>
 {{/each}}
