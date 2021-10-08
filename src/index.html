@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Заголовок страницы</title>
+  <title>App Notes</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
     integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
     crossorigin="anonymous" />
@@ -15,10 +15,15 @@
 
 <body>
   <div class="container">
-    <h1 class="title"><a href="">App Notes</a></h1>
+    <h1 class="title">App Notes</h1>
     <label class="Notes__label">
-      <textarea class="Notes__input" type="text"></textarea>
-      <button class="btn__save" type="button">SAVE</button>
+      <textarea class="Notes__input" type="text" placeholder="enter your note"></textarea>
+      <div class="btn__container">
+        <input class="text__color" type="color">
+        <button class="btn__usecase styles cursive">K</button>
+        <button class="btn__usecase styles heavy">H</button>
+        <button class="btn__usecase save" type="button">SAVE</button>
+      </div>
     </label>
     <ol class="menu js-menu">
     

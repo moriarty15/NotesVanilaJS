@@ -12,12 +12,7 @@
     height: 100px;
     display: block;
   }
-  .btn__save {
-    margin-top: 15px;
-    width: 130px;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
+  .btn__usecase {
     display: block;
     cursor: pointer;
 
@@ -29,6 +24,10 @@
 
     color: $btn-add-color;
     background-color: $bgc-btn-add;
+  }
+  .save {
+    width: 130px;
+    height: 50px;
   }
   .title {
     margin-left: auto;
@@ -50,12 +49,13 @@
   .notes__item {
     width: 300px;
     height: 100%;
-
     margin: 0;
     padding: 0;
-
     margin-left: auto;
     margin-right: auto;
+
+    font-size: 20px;
+    line-height: 1.23;
   }
   .btn {
     width: auto;
@@ -81,5 +81,48 @@
     width: 280px;
     height: 130px;
     display: block;
+  }
+  .btn__container {
+    width: 280px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .styles {
+    height: 35px;
+    width: 35px;
+  }
+  .cursive {
+    font-style: italic;
+  }
+  .heavy {
+    font-weight: bold;
+  }
+  .text__color {
+    width: 35px;
+    height: 35px;
+  }
+  .text__color:hover,
+  .text__color:focus,
+  .text__color:active,
+  .btn__usecase:hover,
+  .btn__usecase:focus,
+  .btn__usecase:active {
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
+      1px 4px 6px rgb(0 0 0 / 16%);
+    background-color: $btn-change-color;
+  }
+
+  .delete:hover,
+  .delete:focus,
+  .delete:active,
+  .change:hover,
+  .change:focus,
+  .change:active {
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
+      1px 4px 6px rgb(0 0 0 / 16%);
   }
 }
