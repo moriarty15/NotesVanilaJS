@@ -2,7 +2,26 @@
 @import './components/mobil';
 
 body {
-  background-color: $bgc-body;
+  background-color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+  .Notes__input {
+    width: 600px;
+  }
+  .btn__save {
+    width: 200px;
+    font-size: 26px;
+  }
+  .textChange {
+    width: 600px;
+    height: 300px;
+  }
+  .notes__item {
+    width: 600px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -10,14 +29,17 @@ body {
     width: 1200px;
   }
   .Notes__input {
-    width: 400px;
+    width: 800px;
   }
   .btn__save {
     width: 200px;
     font-size: 26px;
   }
   .textChange {
-    width: 400px;
-    height: 100px;
+    width: 600;
+    height: 300px;
+  }
+  .notes__item {
+    width: 800px;
   }
 }

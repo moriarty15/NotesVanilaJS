@@ -4,6 +4,7 @@
     margin-left: auto;
     margin-right: auto;
     padding: 15px;
+    background-color: $bgc-body;
   }
   .Notes__input {
     width: 280px;
@@ -44,18 +45,36 @@
   .js-menu {
     margin: 0;
     padding: 0;
-    padding-left: 20px;
+    counter-reset: myCounter;
   }
   .notes__item {
-    width: 300px;
+    width: 250px;
     height: 100%;
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    padding: 4px;
     margin-left: auto;
     margin-right: auto;
 
     font-size: 20px;
     line-height: 1.23;
+
+    background-color: #fff;
+    border-radius: 8px;
+
+    list-style: none;
+    text-align: center;
+  }
+  .notes__item:before {
+    counter-increment: myCounter;
+    content: counter(myCounter);
+    color: white;
+    background: #2980b9;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
   }
   .btn {
     width: auto;
@@ -124,5 +143,13 @@
   .change:active {
     box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
       1px 4px 6px rgb(0 0 0 / 16%);
+  }
+
+  .notes__item__text {
+    margin: 10px 0;
+  }
+  .notes__item__btn {
+    text-align: center;
+    margin-bottom: 5px;
   }
 }
