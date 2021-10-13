@@ -19,8 +19,12 @@ body {
     width: 600px;
     height: 300px;
   }
+  .js-menu {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .notes__item {
-    width: 600px;
+    width: 350px;
   }
 }
 
@@ -38,8 +42,5 @@ body {
   .textChange {
     width: 600;
     height: 300px;
-  }
-  .notes__item {
-    width: 800px;
   }
 }
